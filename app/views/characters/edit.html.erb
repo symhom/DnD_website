@@ -1,0 +1,29 @@
+<% character = Character.find_by(id: params["id"]) %>
+
+<h1>Editing <%=character.name %> <%=character.specie %> <%= character.character_class%> 
+</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <%= form_tag "/characters/#{character.id}", method: "patch" do %>
+
+      <p>Name: <input name="name" value="<%= character.name %>" type="text"  autofocus class="form-control"></p>
+      <p>Species: <input name="specie" value="<%= character.specie %>" type="text" class="form-control"></p>
+      <p>Class: <input name="character_class" value="<%= character.character_class %>" type="text" class="form-control"></p>
+      <p>Picture Url: <input name="picture_url" value="<%= character.picture_url %>" type="text" class="form-control"></p>
+      <p>Level: <input name="level" type="number" value="<%= character.level %>" min = "1" step="1" max = "20" class="form-control"></p>
+      <p>Strength: <input name="strength" type="number" value="<%= character.strength %>" min = "1" step="1" max="30"  class="form-control"></p>
+      <p>Dexterity: <input name="dexterity" type="number" value="<%= character.dexterity %>" min = "1" step="1" max="30" class="form-control"></p>
+      <p>Constitution: <input name="constitution" type="number" value="<%= character.constitution %>" min = "1" max="30" step="1" class="form-control"></p>
+      <p>Intelligence: <input name="intelligence" type="number" value="<%= character.intelligence %>" min = "1" max="30" step="1" class="form-control"></p>
+      <p>Wisdom: <input name="wisdom" type="number" min = "1" value="<%= character.wisdom %>" step="1" max="30" class="form-control"></p>
+      <p>Charisma: <input name="charisma" type="number" min = "1" value="<%= character.charisma %>" step="1" max="30" class="form-control"></p>
+
+
+      <button class="btn btn-primary">Update Character</button>
+
+        <% end %>
+
+  </div>
+</div>

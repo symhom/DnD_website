@@ -1,0 +1,51 @@
+Movie
+  imdb_key: text
+  runtime: integer
+  year: integer
+  mpaa: text
+  title: text
+  poster_url: text
+  plot: text
+  director_id: integer
+
+Director
+  name: text
+
+########################################
+User
+  email: text
+  password: text
+
+Map
+  name: text
+  picture_url: text
+
+Character
+  name: text
+  specie: text 
+  character_class: text 
+  picture_url: text
+  level: integer
+  strength: integer
+  dexterity: integer
+  constitution: integer
+  intelligence: integer
+  wisdom: integer
+  charisma: integer
+
+Game
+  name: text
+
+Store
+  name: text
+
+
+Supply
+  name: text
+  price: integer
+  type: text
+  description: text
+  rarity: text
+# * has one_to_many equipment: Equipment/Spells/Weapon
+
+

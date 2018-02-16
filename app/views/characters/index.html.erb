@@ -1,0 +1,23 @@
+<div class="row">
+
+  <div class="col-sm-3 my-3">
+    <%= link_to image_tag("add_new.png"), "/characters/new" %>
+  </div>
+
+  <% Character.all.order('created_at desc').each do |character| %>
+
+    <div class="col-sm-3 my-4 text-center">
+      <% picture_url = (character.picture_url.present? ? character.picture_url : 'blank_poster.png') %>
+      <%= link_to image_tag(picture_url, :class => "img-fluid"), "/characters/#{character.id}" %>
+
+      <p>
+        <h5> <%=character.name %> </h5>
+        <h5> <%=character.specie %> <%= character.character_class%> </h5>
+        <%= link_to "[Delete]", "/characters/#{character.id}", method: "delete" %>
+        <%= link_to "[Edit]", "/characters/#{character.id}/edit" %>
+      </p>
+    </div>
+
+  <% end %>
+
+</div>

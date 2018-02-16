@@ -1,0 +1,42 @@
+<% character = Character.find_by(id: params["id"]) %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1><%= character.name %></h1>
+    <h1> <%=character.specie %> <%= character.character_class%></h1>
+
+  </div>
+</div>
+<div class="row">
+
+  <div class="col-sm-6">
+    <%= image_tag character.picture_url %>
+  </div>
+  <div class="col-sm-6">
+  		<h2>Available Stats </h2>
+ 	    <% if character.level.present? %>
+      <p class="lead">Level: <%=character.level %></p>
+    <% end %>
+
+     	    <% if character.strength.present? %>
+      <p class="lead">Strength: <%=character.strength %></p>
+    <% end %>
+     	    <% if character.dexterity.present? %>
+      <p class="lead">Dexterity: <%=character.dexterity %></p>
+    <% end %>
+     	    <% if character.constitution.present? %>
+      <p class="lead">Constitution: <%=character.constitution %></p>
+    <% end %>
+     	    <% if character.intelligence.present? %>
+      <p class="lead">Intelligence: <%=character.intelligence %></p>
+
+       	    <% if character.wisdom.present? %>
+      <p class="lead">Wisdom: <%=character.wisdom %></p>
+    <% end %>
+     	    <% if character.charisma.present? %>
+      <p class="lead">Charisma: <%=character.charisma %></p>
+    <% end %>
+    <% end %>
+
+  </div>
+</div>

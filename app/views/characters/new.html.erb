@@ -1,0 +1,26 @@
+<h1>Add a Character</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <%= form_tag "/characters" do %>
+
+      <p>Name: <input name="name" type="text"  autofocus class="form-control"></p>
+      <p>Species: <input name="specie" type="text" class="form-control"></p>
+      <p>Class: <input name="character_class" type="text" class="form-control"></p>
+      <p>Picture Url: <input name="picture_url" type="text" class="form-control"></p>
+      <p>Level: <input name="level" type="number" min = "1" step="1" max = "20" class="form-control"></p>
+      <p>Strength: <input name="strength" type="number" min = "1" step="1" max="30"  class="form-control"></p>
+      <p>Dexterity: <input name="dexterity" type="number" min = "1" step="1" max="30" class="form-control"></p>
+      <p>Constitution: <input name="constitution" type="number" min = "1" max="30" step="1" class="form-control"></p>
+      <p>Intelligence: <input name="intelligence" type="number" min = "1" max="30" step="1" class="form-control"></p>
+      <p>Wisdom: <input name="wisdom" type="number" min = "1" step="1" max="30" class="form-control"></p>
+      <p>Charisma: <input name="charisma" type="number" min = "1" step="1" max="30" class="form-control"></p>
+
+
+      <button class="btn btn-primary">Add Character</button>
+
+    <% end %>
+
+  </div>
+</div>

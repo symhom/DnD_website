@@ -1,0 +1,15 @@
+<h1>Add a Map</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <%= form_tag "/maps" do %>
+
+      <p>Name: <input name="name" type="text" autofocus class="form-control"></p>
+      <p>Picture url: <input name="picture_url" type="text" class="form-control"></p>
+      <button class="btn btn-primary">Add Map</button>
+
+    <% end %>
+
+  </div>
+</div>
