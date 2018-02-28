@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'movies#index'
+  root 'maps#index'
 
   get "/movies" => "movies#index"
   get "/movies/new" => 'movies#new'
@@ -42,16 +42,28 @@ Rails.application.routes.draw do
   patch "/maps/:id" => 'maps#update'
 
   # character
-  get "/characters" => "characters#index"
-  get "/characters/new" => 'characters#new'
-  post "/characters" => 'characters#create'
-  get "/characters/:id" => 'characters#show'
-  delete "/characters/:id" => 'characters#destroy'
-  get "/characters/:id/edit" => 'characters#edit'
-  patch "/characters/:id" => 'characters#update'
+  resources :characters
+  # get "/characters" => "characters#index"
+  # get "/characters/new" => 'characters#new'
+  # post "/characters" => 'characters#create'
+  # get "/characters/:id" => 'characters#show'
+  # delete "/characters/:id" => 'characters#destroy'
+  # get "/characters/:id/edit" => 'characters#edit'
+  # patch "/characters/:id" => 'characters#update'
 
+  get "/games" => "games#index"
+  get "/games/new" => 'games#new'
+  post "/games" => 'games#create'
+  get "/games/:id" => 'games#show'
+  delete "/games/:id" => 'games#destroy'
 
+  get "/players" => "players#index"
+  get "/players/new" => 'players#new'
+  post "/players" => 'players#create'
+  get "/players/:id" => 'players#show'
+  delete "/players/:id" => 'players#destroy'
 
+  post "/players/delete" => 'players#delete'
 
 
 end

@@ -14,14 +14,16 @@ Director
 ########################################
 User
   email: text
-  password: text
+  password_digest: text
 
 Map
   name: text
   picture_url: text
+  user_id: integer
 
 Character
   name: text
+  user_id: integer
   specie: text 
   character_class: text 
   picture_url: text
@@ -35,17 +37,13 @@ Character
 
 Game
   name: text
+  user_id: integer
+  map_id: integer
 
-Store
-  name: text
-
-
-Supply
-  name: text
-  price: integer
-  type: text
-  description: text
-  rarity: text
-# * has one_to_many equipment: Equipment/Spells/Weapon
+Player
+  user_id: integer
+  game_id: integer
+  character_id: integer 
+  #coordinates
 
 

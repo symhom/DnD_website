@@ -1,0 +1,38 @@
+
+<h1>Your Games </h1>
+<br>
+
+<a href = "/games/new">Create a new game</a>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Date Created</th>
+      <th scope="col">Name</th>
+      <th scope="col">Map Name</th>
+      <th scope="col">Players</th>
+    </tr>
+  </thead>
+<tbody>
+<% Game.all.order('created_at desc').each do |game| %>
+    <% if game.user_id === session[:user_id]%>
+       <tr>
+       		<td> <%= game.created_at%> <br> <%= link_to "[Delete]", "/games/#{game.id}", method: "delete" %></td>
+       		<td> <%=game.name %> <br> <%= link_to "[Enter Game]", "/games/#{game.id}" %></td>
+       		<%map = Map.find_by(id: game.map_id)%>
+       		<td> <%= map.name %></td>
+       		
+          <td> 
+            <%players = Player.where(game_id: game.id) %>
+
+            <br>
+                <%= link_to "[Add new player]", "/players/new" %>
+                <br>
+                <%= link_to "[Delete players from game]", "/players/delete" %></td>
+
+       </tr>
+
+    <%end %>
+  <% end %>
+</tbody>
+</table>

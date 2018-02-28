@@ -1,3 +1,6 @@
+
+<% if session[:user_id].present? %>
+
 <h1>Add a Map</h1>
 
 <div class="row">
@@ -5,11 +8,18 @@
 
     <%= form_tag "/maps" do %>
 
-      <p>Name: <input name="name" type="text" autofocus class="form-control"></p>
-      <p>Picture url: <input name="picture_url" type="text" class="form-control"></p>
+      <p>Name: <input name="name" type="text" autofocus class="form-control" required></p>
+      <p>Picture url: <input name="picture_url" type="text" class="form-control" required></p>
       <button class="btn btn-primary">Add Map</button>
 
     <% end %>
 
   </div>
 </div>
+
+<%else %>
+<br>
+<br>
+<p> Please sign in to create maps</p>
+
+<%end %>

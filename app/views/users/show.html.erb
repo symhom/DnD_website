@@ -4,4 +4,4 @@
 <% user = User.find_by(id: params["id"]) %>
 
 <p>Email: <%= user.email %></p>
-<p>Password: <%= user.email %></p>
+<p>Password Digest: <%= user.password %></p>

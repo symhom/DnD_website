@@ -1,0 +1,44 @@
+
+<% if session[:user_id].present? %>
+
+<h1>Create a new game</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <%= form_tag "/games" do %>
+
+      <p>Name: <input name="name" type="text" autofocus class="form-control" required></p>
+      <%stock = User.find_by(email: 'Stock@example.org') %>
+      <%stockMaps = Map.where(user_id: stock.id) %>
+      <%userMaps = Map.where(user_id: session[:user_id])%>
+      
+            <p>Map:
+          <select name="map_id">
+          	<% userMaps.each do |map| %>
+              <option value="<%= map.id %>">
+                <%= map.name %>
+              </option>
+            <% end %>
+            <% stockMaps.each do |map| %>
+              <option value="<%= map.id %>">
+                <%= map.name %>
+              </option>
+            <% end %>
+          </select>
+      </p>
+
+
+      <button class="btn btn-primary">Create a new game</button>
+
+    <% end %>
+
+  </div>
+</div>
+
+<%else %>
+<br>
+<br>
+<p> Please sign in to create games under your account</p>
+
+<%end %>

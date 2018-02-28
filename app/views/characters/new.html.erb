@@ -1,4 +1,11 @@
+
+
+<% if session[:user_id].present? %>
+
 <h1>Add a Character</h1>
+*To make a Monster Character, set the specie type to "Monster"
+<br>
+<br>
 
 <div class="row">
   <div class="col-sm-4">
@@ -24,3 +31,8 @@
 
   </div>
 </div>
+<%else %>
+<br>
+<br>
+<p>Please sign in to make new characters </p>
+<% end %>

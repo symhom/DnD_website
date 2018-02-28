@@ -1,10 +1,15 @@
 class CharactersController < ApplicationController
 
   def index
+    
   end
 
   def update
+
     character = Character.find_by(id: params["id"])
+    if character.user_id != session[:user_id]
+      redirect_to "/characters", notice: "You can only update characters you have created"
+    else
     character.name = params["name"]
     character.specie = params["specie"]
     character.character_class = params["character_class"]
@@ -20,6 +25,7 @@ class CharactersController < ApplicationController
     character.save
     redirect_to "/characters"
   end
+  end
 
   def destroy
     character = Character.find_by(id: params["id"])
@@ -29,6 +35,7 @@ class CharactersController < ApplicationController
 
   def create
     Character.create :name => params["name"],
+              :user_id => session[:user_id],
               :specie => params["specie"],
               :character_class => params["character_class"],
               :level => params["level"],

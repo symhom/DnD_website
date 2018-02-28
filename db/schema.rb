@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "charisma"
     t.text "character_class"
     t.text "picture_url"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "directors", force: :cascade do |t|
@@ -38,6 +40,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "user_id"
+    t.integer "map_id"
+    t.index ["map_id"], name: "index_games_on_map_id"
+    t.index ["user_id"], name: "index_games_on_user_id"
   end
 
   create_table "maps", force: :cascade do |t|
@@ -45,6 +51,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "picture_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_maps_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -61,27 +69,22 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["director_id"], name: "index_movies_on_director_id"
   end
 
-  create_table "stores", force: :cascade do |t|
-    t.text "name"
+  create_table "players", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "game_id"
+    t.integer "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "supplies", force: :cascade do |t|
-    t.text "name"
-    t.integer "price"
-    t.text "type"
-    t.text "description"
-    t.text "rarity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.index ["character_id"], name: "index_players_on_character_id"
+    t.index ["game_id"], name: "index_players_on_game_id"
+    t.index ["user_id"], name: "index_players_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.text "email"
-    t.text "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text "password_digest"
   end
 
 end

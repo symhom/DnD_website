@@ -1,0 +1,17 @@
+
+<% game = Game.find_by(id: params["id"]) %>
+
+
+    <h1><%= game.name %></h1>
+    <%map = Map.find_by(id: game.map_id) %>
+    <%width = FastImage.size(map.picture_url)[0] %>
+    <%height = FastImage.size(map.picture_url)[1] %>
+ 
+
+    <img src =<%= map.picture_url %>>
+<!--     <img src = <%= map.picture_url %>  height = <%=height%> width = <%=width%>>
+ -->
+<!--     <img src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6995f0dd8973d41d32271aa7bc4c60a/52e40c57daca6353f41d9c1c_rw_600.jpg" alt="Mountain View" width="576" height="1462"> -->
+ 
+
+
