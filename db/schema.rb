@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "x_coord"
+    t.integer "y_coord"
     t.index ["character_id"], name: "index_players_on_character_id"
     t.index ["game_id"], name: "index_players_on_game_id"
     t.index ["user_id"], name: "index_players_on_user_id"

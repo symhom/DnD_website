@@ -44,6 +44,8 @@ Player
   user_id: integer
   game_id: integer
   character_id: integer 
+  x_coord: integer
+  y_coord: integer
   #coordinates
 
 

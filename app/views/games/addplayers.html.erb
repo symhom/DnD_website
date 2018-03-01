@@ -1,0 +1,60 @@
+
+<% if session[:user_id].present? %>
+<% game = Game.find_by(id: params["id"]) %>
+
+<h1>Add a player to '<%=game.name%>'</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+
+
+    <%= form_tag "/games/#{game.id}/addplayers" do %>
+
+      <%stock = User.find_by(email: 'Stock@example.org') %>
+      <%stockCharacters = Character.where(user_id: stock.id) %>
+      <%userCharacters = Character.where(user_id: session[:user_id])%>
+      
+            <p>Add a new player:
+          <select name="character_id">
+          	<% userCharacters.each do |character| %>
+
+              <option value="<%= character.id %>">
+                <%if character.name.present?%>
+                <%= character.name %>, <%= character.specie%> <%= character.character_class%>
+
+                <%else%>
+                	<%= character.specie%> <%= character.character_class%>
+                <%end%>
+              </option>
+
+            <% end %>
+            <% stockCharacters.each do |character| %>
+              <option value="<%= character.id %>">
+              	 <%if character.name.present?%>
+                <%= character.name %>, <%= character.specie%> <%= character.character_class%>
+
+                <%else%>
+                	<%= character.specie%> <%= character.character_class%>
+                <%end%>
+
+              </option>
+            <% end %>
+          </select>
+      </p>
+
+
+      <button class="btn btn-primary">Add this player to the game</button>
+
+    <% end %>
+    <p>*Note, you can add the same character multiple times to a game.  </p>
+
+  </div>
+</div>
+
+<%else %>
+<br>
+<br>
+<p> Please sign in to create games under your account</p>
+
+<%end %>

@@ -57,13 +57,14 @@ Rails.application.routes.draw do
   get "/games/:id" => 'games#show'
   delete "/games/:id" => 'games#destroy'
 
-  get "/players" => "players#index"
-  get "/players/new" => 'players#new'
-  post "/players" => 'players#create'
-  get "/players/:id" => 'players#show'
-  delete "/players/:id" => 'players#destroy'
+  get "/games/:id/addplayers" => 'games#addplayers'
+  post "/games/:id/addplayers" => 'games#create_addplayers'
 
-  post "/players/delete" => 'players#delete'
+  get "/games/:id/deleteplayers" => 'games#deleteplayers'
+  post "/games/:id/deleteplayers" => 'games#destroy_deleteplayers'
+
+
+
 
 
 end

@@ -1,0 +1,47 @@
+
+<% if session[:user_id].present? %>
+<% game = Game.find_by(id: params["id"]) %>
+
+<h1>Delete a player from '<%=game.name%>'</h1>
+
+<div class="row">
+  <div class="col-sm-4">
+
+
+    <%= form_tag "/games/#{game.id}/deleteplayers" do %>
+
+   	  <%players = Player.where(game_id: game.id)%>
+
+            <p>Delete a player from the game:
+          <select name="character_id">
+          	<% players.each do |player| %>
+          	<% character = Character.find_by(id: player.character_id) %>
+
+              <option value="<%= character.id %>">
+                <%if character.name.present?%>
+                <%= character.name %>, <%= character.specie%> <%= character.character_class%>
+
+                <%else%>
+                	<%= character.specie%> <%= character.character_class%>
+                <%end%>
+              </option>
+
+            <% end %>
+
+          </select>
+      </p>
+
+
+      <button class="btn btn-primary">Delete this player from the game</button>
+
+    <% end %>
+
+  </div>
+</div>
+
+<%else %>
+<br>
+<br>
+<p> Please sign in to create games under your account</p>
+
+<%end %>

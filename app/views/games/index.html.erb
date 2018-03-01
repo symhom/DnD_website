@@ -24,11 +24,25 @@
        		
           <td> 
             <%players = Player.where(game_id: game.id) %>
+              <ul>
+              <%players.each do |player|%>
 
-            <br>
-                <%= link_to "[Add new player]", "/players/new" %>
+                <%character = Character.find_by(id: player.character_id)%>
+                <%if character.name.present? %>
+                  <li> <%=character.name %>, <%=character.specie%> <%=character.character_class%></li> 
+                <%else%>
+                  <li><%=character.specie%> <%=character.character_class%> </li>
+                <%end %>
+
+              <%end%>
+            </ul>
+                <%= link_to "[Add new player to this game]", "/games/#{game.id}/addplayers" %>
+
+                <%if players.present? %>
                 <br>
-                <%= link_to "[Delete players from game]", "/players/delete" %></td>
+                <%= link_to "[Delete players from this game]", "/games/#{game.id}/deleteplayers" %>
+                <%end%>
+              </td>
 
        </tr>
 
