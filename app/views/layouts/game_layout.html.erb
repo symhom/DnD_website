@@ -14,42 +14,40 @@
     <%= javascript_include_tag 'application' %>
 
 
-    <style>
-    .movableImage
-    { 
-      position:  absolute;
-      left: 0;
-      top: 0; /* set these so Chrome doesn't return 'auto' from getComputedStyle */
-      background: rgba(255,255,255,0.66); 
-      border: 2px  solid rgba(0,0,0,0.5); 
-      border-radius: 4px; padding: 8px;
-    }
-    </style>
- <!--    from https://stackoverflow.com/questions/6230834/html5-drag-and-drop-anywhere-on-the-screen -->
-    <script type = "text/javascript">
-    function drag_start(event) 
-    {
-    var style = window.getComputedStyle(event.target, null);
-    var str = (parseInt(style.getPropertyValue("left")) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top")) - event.clientY)+ ',' + event.target.id;
-    event.dataTransfer.setData("Text",str);
-    } 
+<!--   jquery stuff?
+ -->  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+  .dragImage { border-style: red solid;}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
 
-    function drop(event) 
-    {
-    var offset = event.dataTransfer.getData("Text").split(',');
-    var dm = document.getElementById(offset[2]);
-    dm.style.left = (event.clientX + parseInt(offset[0],10)) + 'px';
-    dm.style.top = (event.clientY + parseInt(offset[1],10)) + 'px';
-    event.preventDefault();
-    return false;
-    }
+  <script>
 
-    function drag_over(event)
-    {
-    event.preventDefault();
-    return false;
-    }  
-</script>
+
+   $( function() {
+
+   
+
+    $( ".dragImage" ).draggable({
+
+
+      stop: function() {
+    
+
+        
+      }
+
+    });
+
+  } );
+  </script>
+
+
+
+
+
   </head>
 
   <body ondragover="drag_over(event)" ondrop="drop(event)">

@@ -20,6 +20,7 @@ Map
   name: text
   picture_url: text
   user_id: integer
+  description: text
 
 Character
   name: text
@@ -34,11 +35,13 @@ Character
   intelligence: integer
   wisdom: integer
   charisma: integer
+  description: text
 
 Game
   name: text
   user_id: integer
   map_id: integer
+
 
 Player
   user_id: integer

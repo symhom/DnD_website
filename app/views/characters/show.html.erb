@@ -1,18 +1,22 @@
 <% character = Character.find_by(id: params["id"]) %>
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col">
     <h1><%= character.name %></h1>
     <h1> <%=character.specie %> <%= character.character_class%></h1>
 
-  </div>
 </div>
-<div class="row">
-
-  <div class="col-sm-6">
-    <%= image_tag character.picture_url %>
+</div>
+<div class = "row">
+  <div class = "col">
+    <%width = FastImage.size(character.picture_url)[0] %>
+    <%height = FastImage.size(character.picture_url)[1] %>
+    <img src = <%= character.picture_url %>  style = "width:<%=width%>px; height:<%=height%>px" >
+    <br>
   </div>
-  <div class="col-sm-6">
+
+
+  <div class="col">
   		<h2>Available Stats </h2>
  	    <% if character.level.present? %>
       <p class="lead">Level: <%=character.level %></p>
@@ -29,13 +33,15 @@
     <% end %>
      	    <% if character.intelligence.present? %>
       <p class="lead">Intelligence: <%=character.intelligence %></p>
-
+      <%end %>
        	    <% if character.wisdom.present? %>
       <p class="lead">Wisdom: <%=character.wisdom %></p>
     <% end %>
      	    <% if character.charisma.present? %>
       <p class="lead">Charisma: <%=character.charisma %></p>
     <% end %>
+        <% if character.description.present? %>
+        <p class = "lead">Description: <%= character.description %> </p>
     <% end %>
 
   </div>

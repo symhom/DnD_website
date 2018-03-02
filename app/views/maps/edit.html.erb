@@ -7,7 +7,8 @@
 
     <%= form_tag "/maps/#{map.id}", method: "patch" do %>
 
-      <p>Name: <input value="<%= map.name %>" name="name" type="text" autofocus class="form-control"></p>
+      <p>Name: <input value="<%= map.name %>" name="name" type="text" autofocus class="form-control" required></p>
+      <p>Map Description: <br> <textarea name = "description" class = "form-control" rows = "4" cols="50" > <%=map.description %></textarea> </p>
 
       <button class="btn btn-primary">Update Map Name</button>
       <%end %>

@@ -21,6 +21,7 @@ class CharactersController < ApplicationController
     character.intelligence = params["intelligence"]
     character.wisdom = params["wisdom"]
     character.charisma = params["charisma"]
+    character.description = params["description"]
 
     character.save
     redirect_to "/characters"
@@ -45,7 +46,8 @@ class CharactersController < ApplicationController
               :constitution => params["constitution"],
               :intelligence => params["intelligence"],
               :wisdom => params["wisdom"],
-              :charisma => params["charisma"]
+              :charisma => params["charisma"],
+              :description => params["description"]
     redirect_to "/characters"
   end
 

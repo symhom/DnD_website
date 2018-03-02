@@ -44,6 +44,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-interact'
 end
 
+gem 'turbolinks',' ~> 2.5', '>= 2.5.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

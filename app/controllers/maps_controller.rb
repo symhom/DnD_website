@@ -6,6 +6,7 @@ class MapsController < ApplicationController
   def update
     map = Map.find_by(id: params["id"])
     map.name = params["name"]
+    map.description = params["description"]
     map.save
     redirect_to "/maps"
   end
@@ -18,7 +19,9 @@ class MapsController < ApplicationController
 
   def create
     Map.create :name => params["name"],
-               :picture_url => params["picture_url"]
+               :picture_url => params["picture_url"],
+               :description => params["description"],
+               :user_id => session[:user_id]
     redirect_to "/maps"
   end
 

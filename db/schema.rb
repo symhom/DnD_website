@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "character_class"
     t.text "picture_url"
     t.integer "user_id"
+    t.text "description"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
+    t.text "description"
     t.index ["user_id"], name: "index_maps_on_user_id"
   end
 

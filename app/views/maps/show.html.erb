@@ -1,9 +1,24 @@
+
+
 <% map = Map.find_by(id: params["id"]) %>
 
 
+
+<%width = FastImage.size(map.picture_url)[0] %>
+<%height = FastImage.size(map.picture_url)[1] %>
+
     <h1><%= map.name %> </h1>
-<%= image_tag map.picture_url %>
+    <%if map.description.present? %>
+<hr>
+<h4>Description</h4>
+<p> <%=map.description%></p>
+<hr>
+<%end%>
+
+ <img src = <%= map.picture_url %>  style = "width:<%=width%>px; height:<%=height%>px" >
+
 <br>
+
 
 
 <!-- <div class="row">

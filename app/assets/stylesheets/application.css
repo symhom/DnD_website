@@ -19,7 +19,8 @@ img {
   box-shadow: 4px 4px 4px gray;
 }
 
-.dropzone {
+ .dragImage { 
+ 	border-style: solid;
+ 	border-color: red;
 
-	
-}
+ }
