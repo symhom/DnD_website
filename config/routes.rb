@@ -60,12 +60,14 @@ Rails.application.routes.draw do
   get "/games/:id/addplayers" => 'games#addplayers'
   post "/games/:id/addplayers" => 'games#create_addplayers'
 
+  
+
 
   get "/games/:id/deleteplayers" => 'games#deleteplayers'
   post "/games/:id/deleteplayers" => 'games#destroy_deleteplayers'
 
 
-
+  patch "/players/" => 'players#update'
 
 
 end

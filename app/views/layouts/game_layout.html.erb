@@ -21,29 +21,49 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+ -->
   
 
-  <script>
-
+ <script>
 
    $( function() {
+      
 
-   
 
     $( ".dragImage" ).draggable({
+      containment: "document",
 
+      stop: function(event, ui) {
+        playerID =  $(this).attr('data-val');
+        leftPosition = ui.position.left;
+        topPosition = ui.position.top;
 
-      stop: function() {
-    
+        alert("playerID: " + playerID + " Position = " + leftPosition + " " + topPosition)
 
+         $.ajax({ 
+         url: "/players/",
+         type: "Patch",
+         data: {
+          'id': playerID,
+          'left': leftPosition,
+          'top' : topPosition  // user_id comes from PHP
+        }, // end ajax        }
+      });
+     
         
       }
-
     });
-
   } );
+
+
+
+
   </script>
 
+
+  <script>
+  </script>
 
 
 
@@ -100,6 +120,7 @@
 
 
     <div class="container">
+
 
       <%= yield %>
 

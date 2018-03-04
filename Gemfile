@@ -36,6 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 ######################################################
 #jQuery 
 gem 'jquery-ui-rails'
+gem 'jquery-rails'
 #to find sizes of images
 gem 'fastimage'
 #interactjs
@@ -44,7 +45,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-interact'
 end
 
-gem 'turbolinks',' ~> 2.5', '>= 2.5.3'
+gem 'turbolinks', '~> 5.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

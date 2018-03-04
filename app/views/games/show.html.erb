@@ -1,6 +1,7 @@
 
 <% game = Game.find_by(id: params["id"]) %>
 
+      <%map = Map.find_by(id: game.map_id) %>
 
     <h1><%= game.name %></h1>
 
@@ -8,18 +9,21 @@
 
 	<% players.each do |player| %>
 		<% character = Character.find_by(id: player.character_id) %>
-		<img src = <%=character.picture_url%> class = "dragImage" class = 'ui-widget-content'  draggable = "true" style = "width:150px; height:150px" >
+
+		<%if !player.x_coord.present? and !player.y_coord.present?%>
+		<img src = <%=character.picture_url%>  class = "dragImage" class = 'ui-widget-content' data-val = <%=player.id%>  draggable = "true"  style = "width:150px; height:150px" >
+		<%else %>	
+
+		<img src = <%=character.picture_url%>  class = "dragImage" class = 'ui-widget-content' data-val = <%=player.id%> draggable = "true"  style = "width:150px; left:<%=player.x_coord.to_i%>px; top:<%=player.y_coord.to_i%>px; height:150px" >
+		<%end%>
 
 	<%end %>
 
-      <%map = Map.find_by(id: game.map_id) %>
     <%width = FastImage.size(map.picture_url)[0] %>
     <%height = FastImage.size(map.picture_url)[1] %>
-    <div class = "canvas">
     <img src = <%= map.picture_url %>  style = "width:<%=width%>px; height:<%=height%>px" >
 
 
-</div>
  
 <!--     <img src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6995f0dd8973d41d32271aa7bc4c60a/52e40c57daca6353f41d9c1c_rw_600.jpg" alt="Mountain View" width="576" height="1462"> -->
  

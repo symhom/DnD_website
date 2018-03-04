@@ -14,8 +14,7 @@ class GamesController < ApplicationController
        render :layout=>'game_layout'
 
   end
-
-
+  
   def destroy    
     game = Game.find_by(id: params["id"])
     game.delete
