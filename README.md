@@ -11,16 +11,20 @@ There are stock characters and maps that any user can use.
 
 To access this stock account:
 email: Stock@example.org
+
 password: admin
 
 Other user accounts:
 email: cookie@example.org
+
 password: monster
 
 email: kermit@example.org
+
 password: thefrog
 
 email: fozzy@example.org
+
 password: bear
 
 ## Models
