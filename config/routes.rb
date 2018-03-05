@@ -1,23 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'maps#index'
-
-  get "/movies" => "movies#index"
-  get "/movies/new" => 'movies#new'
-  post "/movies" => 'movies#create'
-  get "/movies/:id" => 'movies#show'
-  delete "/movies/:id" => 'movies#destroy'
-  get "/movies/:id/edit" => 'movies#edit'
-  patch "/movies/:id" => 'movies#update'
-
-  get "/directors" => "directors#index"
-  get "/directors/new" => 'directors#new'
-  post "/directors" => 'directors#create'
-  get "/directors/:id" => 'directors#show'
-  delete "/directors/:id" => 'directors#destroy'
-  get "/directors/:id/edit" => 'directors#edit'
-  patch "/directors/:id" => 'directors#update'
-
+  root 'maps#homepage'
   # get "/signup" => 'users#new'
 
   get "/sessions/new" => 'sessions#new'
@@ -40,6 +23,7 @@ Rails.application.routes.draw do
   delete "/maps/:id" => 'maps#destroy'
   get "/maps/:id/edit" => 'maps#edit'
   patch "/maps/:id" => 'maps#update'
+  get "/maps/homepage" => 'maps#homepage'
 
   # character
   resources :characters

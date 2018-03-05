@@ -31,12 +31,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
-  create_table "directors", force: :cascade do |t|
-    t.text "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "games", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at"
@@ -55,20 +49,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "user_id"
     t.text "description"
     t.index ["user_id"], name: "index_maps_on_user_id"
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.text "imdb_key"
-    t.integer "runtime"
-    t.integer "year"
-    t.text "mpaa"
-    t.text "title"
-    t.text "poster_url"
-    t.text "plot"
-    t.integer "director_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["director_id"], name: "index_movies_on_director_id"
   end
 
   create_table "players", force: :cascade do |t|

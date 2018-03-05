@@ -4,6 +4,17 @@ class CharactersController < ApplicationController
     
   end
 
+  def show
+    character = Character.find_by(id: params["id"])
+    user = character.user_id
+    stock_user = User.find_by(email: "Stock@example.org")
+    if user != session[:user_id] && user != stock_user.id
+      redirect_to "/characters", notice: "You are not allowed to see this character"
+    end      
+
+  end
+
+
   def update
 
     character = Character.find_by(id: params["id"])

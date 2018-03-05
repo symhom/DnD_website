@@ -16,10 +16,21 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by(id: params["id"])
-    user.email = params["email"]
-    user.password = params["password"]
-    user.save
-    redirect_to "/users"
+    if user != nil
+      if user.authenticate(params["old_password"])
+        user.password = params["new_password"]
+        user.save
+        redirect_to "/users/#{session[:user_id]}", notice: "Password has successfully changed"
+      else
+        redirect_to "/users/#{session[:user_id]}", notice: "Password not recognized."
+
+      end
+    else
+      redirect_to "/sessions/new"
+    end
+
+
+
   end
 
   def destroy
@@ -36,7 +47,7 @@ class UsersController < ApplicationController
 
     # if @user.errors.any?
     if @user.save
-      redirect_to "/users", notice: "Thanks for signing up"
+      redirect_to "/", notice: "Thanks for signing up"
     else
       render 'new'
     end

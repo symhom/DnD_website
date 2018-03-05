@@ -1,3 +1,6 @@
+<%stock = User.find_by(email: "Stock@example.org")%>
+<%if session[:user_id] == stock.id %>
+
 <div class="row">
 
   <div class="my-3">
@@ -13,17 +16,21 @@
       </tr>
     </thead>
     <tbody>
+      <%stock = User.find_by(email: "Stock@example.org")%>
       <% @users.each do |user| %>
+      <%if user.id != stock.id%>
         <tr>
           <td><%= user.email %></td>
-          <td><%= user.password %></td>
           <td>
-            <%= link_to "[View]", "/users/#{user.id}" %>
-            <%= link_to "[Edit]", "/users/#{user.id}/edit" %>
             <%= link_to "[Delete]", "/users/#{user.id}", method: 'delete' %>
           </td>
         </tr>
+        <%end%>
       <% end %>
     </tbody>
   </table>
 </div>
+
+<%else%>
+<p>You are not allowed to access this page.  </p>
+<%end%>

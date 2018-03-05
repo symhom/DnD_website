@@ -1,17 +1,3 @@
-Movie
-  imdb_key: text
-  runtime: integer
-  year: integer
-  mpaa: text
-  title: text
-  poster_url: text
-  plot: text
-  director_id: integer
-
-Director
-  name: text
-
-########################################
 User
   email: text
   password_digest: text

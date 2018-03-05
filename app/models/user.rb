@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :characters,  :dependent => :destroy
   has_many :maps,  :dependent => :destroy
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
   validates :password, presence: true
 
 end

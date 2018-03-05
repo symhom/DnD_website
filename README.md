@@ -3,9 +3,7 @@
 Dungeons and Dragons (DnD) is a fantasy role playing game. 
 "The characters embark upon imaginary adventures within a fantasy setting. A Dungeon Master (DM) serves as the game's referee and storyteller while maintaining the setting in which the adventures occur, and playing the role of the inhabitants. The characters form a party that interacts with the setting's inhabitants, and each other. Together they solve dilemmas, engage in battles, and gather treasure and knowledge. In the process the characters earn experience points in order to rise in levels, and become increasingly powerful over a series of sessions".
 
-While DnD does not require any gaming supplies except for dices, players have found it useful to have maps for references, especially for battles and exploring caves, towns, and buildings. Roll20.net is a useful website where players can upload maps, and character images. There, it is easier to keep track of where the characters move during an event. 
-
-There are often stores in towns where characters can buy supplies. Another website exists that randomly generates stores with various different supplies. This feature is helpful and time saving for DMs. 
+While DnD does not require any gaming supplies except for dices, players have found it useful to have maps for references, especially for battles and exploring caves, towns, and buildings. Roll20.net is a useful website where players can upload maps, and character im
 
 This website will mimic roll20.net
 
@@ -15,8 +13,8 @@ This website will mimic roll20.net
 2. Character
 3. Game
 4. User
-5. Store
-6. Equipment/Spell/Weapons ? 
+5. Session
+6. Player
 
 ### Map
 * name: text
@@ -54,17 +52,5 @@ The dungeon master user will be able to create games and add users to them. The 
 * password: text
 
 Users will be able to create their own accounts in order to save their custom made characters. Users will be able to create accounts, view their own, and edit it. 
-
-### Store
-* name: text
-* has_many equipment/spells/weapons
-
-There are often stores where characters can buy supplies. The store will be randomly generated to help the Dungeon Master. People will only be able to view this. 
-
-### Equipment/Spell/Weapons
-* name: text
-* price: integer
-* type: text (equipment, spell, weapons)
-* description: text
 
 Users will not be able to delete or edit these items. # mpcs52553-final

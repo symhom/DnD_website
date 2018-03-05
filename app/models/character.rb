@@ -3,5 +3,5 @@ class Character < ApplicationRecord
 	validates :character_class, presence: true
 	validates :picture_url, presence: true
 	belongs_to :user
-	has_many :players, :dependent => :destroy
+	has_many :players, :dependent => :delete_all
 end
