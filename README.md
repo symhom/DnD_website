@@ -67,7 +67,7 @@ People will be able to view characters. They can create, edit, and delete their 
 * user_id: integer (a user can make a game, and this game belongs to that user)
 * map_id: integer (each game has one map)
 
-The dungeon master user will be able to create games and add character images to them. The DM will choose the map, and can click and drag the pictures around to demonstrate the locations of all the players.
+The dungeon master user will be able to create games and add character images to them. The DM will choose the map, and can click and drag the pictures around to demonstrate the locations of all the players. If player images respective height and width is greater than 1/8 the map's height and width, it is resized. The player image scale is still kept. 
 
 ### Player
 * user_id: integer (belongs to a user)
