@@ -26,7 +26,7 @@ class GamesController < ApplicationController
     game = Game.find_by(id: params["id"])
     user = game.user_id
     if user == session[:user_id]
-      game.delete
+      game.destroy
       redirect_to "/games"
     else
       redirect_to "/games", notice: "You are not allowed to delete this game."
@@ -71,8 +71,8 @@ class GamesController < ApplicationController
     game = Game.find_by(id: params["id"])
     user = game.user_id
     if user == session[:user_id]
-      p = Player.find_by(game_id: params["id"], character_id: params["character_id"])
-      p.delete
+      player = Player.find_by(game_id: params["id"], character_id: params["character_id"])
+      player.destroy
       redirect_to "/games"
     else
       redirect_to "/games", notice: "You are not allowed to delete players to this game."

@@ -2,7 +2,7 @@
 <hr>
 
 <% user = User.find_by(id: params["id"]) %>
-
+<% if user.present?%>
 <p>Email: <%= user.email %></p>
 
 <h3>Change Password</h3>
@@ -15,7 +15,11 @@
       <p>Old password: <input name="old_password" type="password" autofocus class="form-control" required></p>
       <p>New password: <input name="new_password" type="password" autofocus class="form-control" required></p>
 
-      <button class="btn btn-primary">Update Map Name</button>
+      <button class="btn btn-primary">Update Password</button>
       <%end %>
   </div>
 </div>
+
+<%else%>
+<%controller.redirect_to "/logout" %>
+<%end%>

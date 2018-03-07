@@ -2,26 +2,54 @@
 <% game = Game.find_by(id: params["id"]) %>
 
       <%map = Map.find_by(id: game.map_id) %>
+      <%map_width = FastImage.size(map.picture_url)[0] %>
+	  <%map_height = FastImage.size(map.picture_url)[1] %>
 
     <h1><%= game.name %></h1>
+    <p>Newly added players initialize below map picture </p>
+<div class="row">
+
+     <img src = <%= map.picture_url %>  style = "width:<%=map_width%>px; height:<%=map_height%>px" >
+</div>
 
 	<%players = Player.where(game_id: game.id) %>
 
 	<% players.each do |player| %>
 		<% character = Character.find_by(id: player.character_id) %>
+		<%width = FastImage.size(character.picture_url)[0] %>
+		<%height = FastImage.size(character.picture_url)[1] %>
+
+		<%if !(width *9 < map_width) && !(height *9 < map_height)%>
+			<%if (map_width/ width) > (map_height/height) %>
+				<%factor = (map_height.to_f/9.0)/height.to_f%>
+				
+
+				<%width = width * factor %>
+				<%height = height * factor%>
+				<%width = width.to_i%>
+				<%height = height.to_i%>
+				
+			<%else%>
+				<%factor = (map_width.to_f/9.0) / width.to_f%>
+
+				<%width = width * factor %>
+				<%height = height * factor%>
+				<%width = width.to_i%>
+				<%height = height.to_i%>
+				
+			<%end%>
+
+		<%end%>
 
 		<%if !player.x_coord.present? and !player.y_coord.present?%>
-		<img src = <%=character.picture_url%>  class = "dragImage" class = 'ui-widget-content' data-val = <%=player.id%>  draggable = "true"  style = "width:150px; height:150px" >
+		<img src = <%=character.picture_url%>  class = "dragImage" class = 'ui-widget-content' data-val = <%=player.id%>  draggable = "true"  style = "width: <%=width%>px; height: <%=height%>px" >
 		<%else %>	
 
-		<img src = <%=character.picture_url%>  class = "dragImage" class = 'ui-widget-content' data-val = <%=player.id%> draggable = "true"  style = "width:150px; left:<%=player.x_coord.to_i%>px; top:<%=player.y_coord.to_i%>px; height:150px" >
+		<img src = <%=character.picture_url%>  class = "dragImage" class = 'ui-widget-content' data-val = <%=player.id%> draggable = "true"  style = "width:<%=width%>px; left:<%=player.x_coord.to_i%>px; top:<%=player.y_coord.to_i%>px; height:<%=height%>px" >
 		<%end%>
 
 	<%end %>
 
-    <%width = FastImage.size(map.picture_url)[0] %>
-    <%height = FastImage.size(map.picture_url)[1] %>
-    <img src = <%= map.picture_url %>  style = "width:<%=width%>px; height:<%=height%>px" >
 
 
  

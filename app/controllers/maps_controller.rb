@@ -36,7 +36,7 @@ class MapsController < ApplicationController
     map = Map.find_by(id: params["id"])
     user = map.user_id
     if user == session[:user_id]
-      map.delete
+      map.destroy
       redirect_to "/maps"
     else
       redirect_to "/maps", notice: "You are not allowed to delete this map."

@@ -41,7 +41,7 @@ class CharactersController < ApplicationController
 
   def destroy
     character = Character.find_by(id: params["id"])
-    character.delete
+    character.destroy
     redirect_to "/characters"
   end
 
