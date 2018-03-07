@@ -13,9 +13,9 @@
     <%= form_tag "/characters" do %>
 
       <p>Name: <input name="name" type="text"  autofocus class="form-control"></p>
-      <p>Species: <input name="specie" type="text" class="form-control"></p>
-      <p>Class: <input name="character_class" type="text" class="form-control"></p>
-      <p>Picture Url: <input name="picture_url" type="text" class="form-control"></p>
+      <p>Species: <input name="specie" type="text" class="form-control" required></p>
+      <p>Class: <input name="character_class" type="text" class="form-control" required></p>
+      <p>Picture Url: <input name="picture_url" type="text" class="form-control" required></p>
       <p>Level: <input name="level" type="number" min = "1" step="1" max = "20" class="form-control"></p>
       <p>Strength: <input name="strength" type="number" min = "1" step="1" max="30"  class="form-control"></p>
       <p>Dexterity: <input name="dexterity" type="number" min = "1" step="1" max="30" class="form-control"></p>
