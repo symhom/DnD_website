@@ -27,6 +27,9 @@ email: fozzy@example.org
 
 password: bear
 
+To see deployment at heroku, please visit:
+http://dungeon-masterer.herokuapp.com/
+
 ## Models
 
 1. Map
