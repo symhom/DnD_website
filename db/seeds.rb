@@ -27,7 +27,7 @@ maps = [
     {
     "name" => 'Greenbriar Tavern',
     "user_id" => u.id,
-    "description" => '',
+    "description" => 'Locals seem to be the primary clientele at this tavern, which often means great company. Several long tables are occupied by happy, excited groups of people, some are dancing on the table, while others cheer them on with clapping and yelling. The other, smaller tables are also occupied by people who seem to be enjoying themselves a lot, perhaps too much, if such a thing is possible. Even most of the stools at the bar are occupied, though nobody seems to mind more company.',
     "picture_url" => 'https://pro2-bar-s3-cdn-cf4.myportfolio.com/b6995f0dd8973d41d32271aa7bc4c60a/f9d5a70b25d398db755863b1_rw_1200.jpg'
   },
   {
@@ -63,7 +63,9 @@ maps = [
     {
     "name" => 'Temple of the Sky God',
     "user_id" => u.id,
-    "description" => '',
+    "description" => 'High above the town of Arabel in Corymer is a floating temple. An oracle known as the “Voice of the Wind” is said to reside there. The faithful travel to the temple by climbing to the top of nearby Windspire peak and then taking one of the flying mounts into the sky.
+
+        In recent months travelers venturing to the floating temple have not returned. The sky around the temple has become red and people who have climbed the mountain have heard howls on the wind. A local priest has grown concerned and requested some adventurers to investigate.',
     "picture_url" => 'https://pro2-bar-s3-cdn-cf5.myportfolio.com/b6995f0dd8973d41d32271aa7bc4c60a/68801217ac02af2fc853f7d0_rw_1200.jpg'
   },
       {
@@ -111,7 +113,7 @@ characters = [
     "intelligence" => '10',
     "wisdom" => '10',
     "charisma" => '14',
-    "description" => 'Draug is still going through his emo stage.'
+    "description" => 'Draug is still going through his emo stage. His gloomliness is compounded as his twin brother constantly impersonates him.'
   },
     { "name" => 'Risa',
     "user_id" => u.id,
@@ -125,7 +127,7 @@ characters = [
     "intelligence" => '13',
     "wisdom" => '13',
     "charisma" => '9',
-    "description" => ''
+    "description" => 'Risa comes from the Shade forest, and has a crippling inability to understand sarcasm.'
   },
     { "name" => 'Rinn',
     "user_id" => u.id,
@@ -139,7 +141,7 @@ characters = [
     "intelligence" => '13',
     "wisdom" => '13',
     "charisma" => '9',
-    "description" => ''
+    "description" => 'Rinn is an unbalanced Elf druid from a secret brawler\'s guild who always wanted to learn magic, but struggled with it. She eventually dropped out, and decided to become a hippie.'
   },
     { "name" => 'Vari',
     "user_id" => u.id,
@@ -153,7 +155,7 @@ characters = [
     "intelligence" => '16',
     "wisdom" => '12',
     "charisma" => '11',
-    "description" => 'A creative woman with a pragmatic outlook on life.'
+    "description" => 'Vari is a creative woman with a pragmatic outlook on life. After becoming the sole guardian of her 27 siblings, she has resorted to scams in order to provide for them. '
   },
       { "name" => 'Kery',
     "user_id" => u.id,
@@ -167,7 +169,7 @@ characters = [
     "intelligence" => '13',
     "wisdom" => '10',
     "charisma" => '18',
-    "description" => ''
+    "description" => 'Kery is a stern wizard who grew up in a war-torn city. She eventually became a weapon\'s instructor for the city militia, until she was betray and accused of treachery...'
   },
     { "name" => 'Alisair',
     "user_id" => u.id,
@@ -181,7 +183,7 @@ characters = [
     "intelligence" => '14',
     "wisdom" => '17',
     "charisma" => '8',
-    "description" => ''
+    "description" => 'Alisair is a stuck up warlock that is allergic to humor. He is also lactose intolerant.'
   },
       { "name" => 'Baeshra',
     "user_id" => u.id,
@@ -195,7 +197,7 @@ characters = [
     "intelligence" => '8',
     "wisdom" => '8',
     "charisma" => '8',
-    "description" => ''
+    "description" => 'Baeshra is a miserable lizardfolk fighter. He was born in a strict monastery, but accidentally torched the temple by trying to set an ant hill on fire. He is now cursed by its God to permanently speak in puns.'
   },
       { "name" => 'Odella',
     "user_id" => fozzy.id,
@@ -209,7 +211,7 @@ characters = [
     "intelligence" => '15',
     "wisdom" => '15',
     "charisma" => '11',
-    "description" => ''
+    "description" => 'Odella is a paranoid human sorceress from a poor dairy farm. She is petrified of fire.'
   },
         { "name" => 'Brammus',
     "user_id" => kermit.id,
@@ -223,7 +225,7 @@ characters = [
     "intelligence" => '6',
     "wisdom" => '6',
     "charisma" => '6',
-    "description" => ''
+    "description" => 'Brammus is a racist dwarf barbarian from an underground military stronghold who always speaks in the third person.'
   },
         { "name" => 'Orilos',
     "user_id" => cookie.id,
@@ -237,7 +239,7 @@ characters = [
     "intelligence" => '12',
     "wisdom" => '12',
     "charisma" => '12',
-    "description" => ''
+    "description" => 'Orilos is a crabby halfing rogue from a small town on the border who is trying to avoid a prophecy.'
   },
         { "name" => '',
     "user_id" => u.id,
@@ -294,7 +296,7 @@ characters = [
     "intelligence" => '',
     "wisdom" => '',
     "charisma" => '',
-    "description" => ''
+    "description" => 'Owlbears are between eight to ten foot tall, and are a cross between a bear and an owl. Owlbears are magical carnivorous creatures, famed for their aggression and ferocity. They live in mated pairs in caves and hunt any creature bigger than a mouse. They use a "hug" and their beak to attack. The origins of owlbears are in dispute. Some indicate that they are the product of a wizard\'s experiments. The lich Thessalar also claims to have created them, but his insanity and egomania put the accuracy of this claim in doubt. Elves claim that owlbears have existed for millennia and older fey say that they have always existed in the Feywild.'
   },
       { "name" => '',
     "user_id" => u.id,

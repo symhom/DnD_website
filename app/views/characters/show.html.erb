@@ -11,8 +11,12 @@
   <div class = "col">
     <%width = FastImage.size(character.picture_url)[0] %>
     <%height = FastImage.size(character.picture_url)[1] %>
-    <img src = <%= character.picture_url %>  style = "width:<%=width%>px; height:<%=height%>px" >
-    <br>
+
+
+       <img src = <%= character.picture_url %>  style = "width:100%;  height:auto" >
+
+<!--        <%=height%>px
+ -->    <br>
   </div>
 
 
