@@ -1,7 +1,7 @@
 # Final Project: DnD
 
 Dungeons and Dragons (DnD) is a fantasy role playing game. 
-"The characters embark upon imaginary adventures within a fantasy setting. A Dungeon Master (DM) serves as the game's referee and storyteller while maintaining the setting in which the adventures occur, and playing the role of the inhabitants. The characters form a party that interacts with the setting's inhabitants, and each other. Together they solve dilemmas, engage in battles, and gather treasure and knowledge. In the process the characters earn experience points in order to rise in levels, and become increasingly powerful over a series of sessions".
+"The characters embark upon imaginary adventures within a fantasy setting. A Dungeon Master (DM) serves as the game's referee and storyteller while maintaining the setting in which the adventures occur, and playing the role of the inhabitants. The characters form a party that interacts with the setting's inhabitants, and each other. Together they solve dilemmas, engage in battles, and gather treasure and knowledge. In the process the characters earn experience points in order to rise in levels, and become increasingly powerful over a series of sessions". (wikipedia)
 
 While DnD does not require any gaming supplies except for dices, players have found it useful to have maps for references, especially for battles and exploring caves, towns, and buildings. Roll20.net is a useful website where players can upload maps, and character. Character images can be moved around the map. This website will mimic roll20.net.
 
@@ -88,3 +88,4 @@ Users can have many games and characters. If they have two games and want to use
 Users will be able to create their own accounts in order to save their custom made characters. Users will be able to create accounts, view their own, and edit the password. 
 
 mpcs52553-final
+# DungeonsAndDragonsWebsite
