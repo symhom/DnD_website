@@ -9,11 +9,6 @@ After an account is made, a user can create games. A game has a map, and can add
 
 There are stock characters and maps that any user can use. 
 
-To access this stock account:
-email: Stock@example.org
-
-password: admin
-
 Other user accounts:
 email: cookie@example.org
 
